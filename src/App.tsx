@@ -2,11 +2,38 @@ import Select from "./components/Select.tsx";
 import {FormEvent, useState} from "react";
 import Dropdown from "./components/Dropdown.tsx";
 import {Option} from "./components/Dropdown.tsx";
+import Button from "./components/Button.tsx";
+import Divider from "./components/Divider.tsx";
+import Accordion, {Item} from "./components/Accordion.tsx";
+import AccordionGrider, {ItemGrider} from "./components/AccordionGrider.tsx";
 
 const options: Option[] = [
     { label: "Red", value: "red" },
     { label: "Green", value: "green" },
     { label: "Blue", value: "blue" },
+];
+
+const accordionItems: Item[] = [
+    {
+        label: "test label",
+        content: "test content"
+    },
+    {
+        label: "another accordion label",
+        content: "what a nice content"
+    }
+];
+const accordionItemsGrider: ItemGrider[] = [
+    {
+        id: "kjkjkk",
+        label: "test label",
+        content: "test content"
+    },
+    {
+        id: "adasdf",
+        label: "another accordion label",
+        content: "what a nice content"
+    }
 ];
 
 function App() {
@@ -26,13 +53,17 @@ function App() {
 
     return (
         <>
+            <Divider text={"select"}/>
             <form action="" onSubmit={handleSubmit}>
-                <Select id={"test"} name={"my_select"} options={["hello", "world", "hey", "what"]} />
-                <button type="submit">Submit</button>
+                <Select className={"w-48"} id={"test"} name={"my_select"} options={["hello", "world", "hey", "what"]} />
+                <Button id={"btn"} lg primary>Submit</Button>
             </form>
-            <hr/><br/>
+            <Divider text={"dropdown"}/>
             <Dropdown options={options} selection={selection?.label} onSelect={handleSelectDropdown} />
-            <Dropdown options={options} selection={selection?.label} onSelect={handleSelectDropdown} />
+            <Divider text={"accordion"} />
+            <Accordion items={accordionItems} />
+            <Divider text={"accordion grider"}/>
+            <AccordionGrider items={accordionItemsGrider}/>
         </>
     );
 }
