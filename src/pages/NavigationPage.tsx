@@ -5,6 +5,7 @@ import Sidebar from "../components/Sidebar.tsx";
 import TablePage from "./TablePage.tsx";
 import TableGriderPage from "./TableGriderPage.tsx";
 import NavigationProvider from "../components/AnchorComponent/context/navigation.tsx";
+import CounterPage from "./CounterPage.tsx";
 
 //Sidebar is basically an array of Link components
 //Link component, when clicked, changes pushState(path) and updates the state inside the context(trigger this page re-render)
@@ -26,6 +27,9 @@ function NavigationPage() {
                     </Route>
                     <Route path={"/table-grider"}>
                         <TableGriderPage/>
+                    </Route>
+                    <Route path={"/counter"}>
+                        <CounterPage />
                     </Route>
                 </div>
             </div>

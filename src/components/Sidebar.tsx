@@ -12,6 +12,7 @@ function Sidebar() {
         { label: "Select", path: "/select" },
         { label: "Table", path: "/table" },
         { label: "TableGrider", path: "/table-grider" },
+        { label: "Counter", path: "/counter" }
     ];
 
     const renderedLinks = links.map(lnk => {
